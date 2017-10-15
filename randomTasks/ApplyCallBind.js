@@ -1,36 +1,27 @@
+var sum = function(a, b) {
+  return a + b;
+};
+  
 function sumArgs() {
   arguments.myReduce = [].reduce;
-  return arguments.myReduce(function(a, b) {
-    return a + b;
-  }, 0);
+  return arguments.myReduce(sum, 0);
 }
 
 function sumArgsBind() {
-  var sum = function(a, b) {
-    return a + b;
-  };
   return [].reduce.bind(arguments, sum, 0)();
 }
 
 function sumArgsCall() {
-  var sum = function(a, b) {
-    return a + b;
-  };
   return [].reduce.call(arguments, sum, 0);
 }
 
 function sumArgsApply() {
-  var sum = function(a, b) {
-    return a + b;
-  };
   var arr = [sum, 0];
   return [].reduce.apply(arguments, arr);
 }
 
 function sumArgsNewEcma(...args) {
-  return args.reduce(function(a, b) {
-    return a + b;
-  });
+  return args.reduce(sum);
 }
 
 console.log(sumArgs(1, 2, 3));
