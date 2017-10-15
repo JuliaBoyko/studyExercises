@@ -5,6 +5,13 @@ function sumArgs() {
   }, 0);
 }
 
+function sumArgsBind() {
+  var sum = function(a, b) {
+    return a + b;
+  };
+  return [].reduce.bind(arguments, sum, 0)();
+}
+
 function sumArgsCall() {
   var sum = function(a, b) {
     return a + b;
@@ -27,6 +34,11 @@ function sumArgsNewEcma(...args) {
 }
 
 console.log(sumArgs(1, 2, 3));
+console.log(sumArgsBind(1, 2, 3));
 console.log(sumArgsCall(1, 2, 3));
 console.log(sumArgsApply(1, 2, 3));
 console.log(sumArgsNewEcma(1, 2, 3));
+
+
+
+
