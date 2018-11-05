@@ -23,3 +23,17 @@ while (i <= 100) {
     console.log(i);
   }
 }
+
+/*
+for(var i = 1; i <= 100; i++) {
+    var fizz = '';
+    var buzz = '';
+    if(i%3 === 0) {
+        fizz = 'Fizz';
+  }
+    if(i%5 === 0 ) {
+        buzz = 'Buzz';
+  }  
+  console.log(fizz + buzz || i);
+}
+*/
